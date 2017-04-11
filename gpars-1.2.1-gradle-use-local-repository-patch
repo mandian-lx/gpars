@@ -1,0 +1,20 @@
+--- GPars-release-1.2.1/build.gradle.orig
++++ GPars-release-1.2.1/build.gradle
+@@ -89,6 +90,7 @@
+ jar.dependsOn copyDSLDefinitions
+ 
+ repositories {
++    xmvn()
+     if (project.hasProperty('gpars_useMavenLocal') && gpars_useMavenLocal) {
+         mavenLocal()
+     }
+--- GPars-release-1.2.1/buildSrc/build.gradle.orig
++++ GPars-release-1.2.1/buildSrc/build.gradle
+@@ -23,6 +23,7 @@
+ apply plugin: 'groovy'
+ 
+ repositories {
++  xmvn()
+   mavenCentral()
+   //mavenRepo name: 'SpringSource', url: 'http://repository.springsource.com/maven/bundles/release'
+   //mavenRepo name: 'JavaNet', url: 'http://download.java.net/maven/2/'

@@ -18,8 +18,8 @@ Patch0:         0001-JSR-166.patch
 Patch1:         0002-Enable-XMvn-local-mode.patch
 Patch2:         0001-Port-build-script-to-current-gradle.patch
 Patch3:         gpars-1.2.1-port-to-netty-3.10.6.patch
-Patch100:       gpars-1.2.1-gradle-use-maven-plugin-patch
-Patch101:       gpars-1.2.1-gradle-use-local-repository-patch
+Patch100:       gpars-1.2.1-gradle-use-maven-plugin.patch
+Patch101:       gpars-1.2.1-gradle-use-local-repository.patch
 BuildRequires:  gradle #gradle-local >= 2.1-0.10
 BuildRequires:  apache-parent
 BuildRequires:  extra166y

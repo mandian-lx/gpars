@@ -1,0 +1,11 @@
+--- GPars-release-1.2.1/build.gradle.orig
++++ GPars-release-1.2.1/build.gradle
+@@ -38,6 +38,7 @@
+ 
+ apply plugin: 'eclipse'
+ apply plugin: 'idea'
++apply plugin: 'maven'
+ 
+ defaultTasks 'test'
+ 
+
