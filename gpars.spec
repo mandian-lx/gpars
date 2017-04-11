@@ -25,7 +25,7 @@ BuildRequires:  apache-parent
 BuildRequires:  extra166y
 BuildRequires:  jcsp
 BuildRequires:  netty3
-BuildRequires:  groovy-lib
+BuildRequires:  groovy #groovy-lib
 BuildRequires:  multiverse
 
 %description
