@@ -41,8 +41,7 @@ Dataflow operators, Promises, CSP, Actors, Asynchronous Functions,
 Agents and Parallel Collections.
 
 %prep
-#%setup -q
-%setup -q -n GPars-release-%{version}
+%setup -q
 cp %{SOURCE1} .
 #rm -rf lib/ gradle/wrapper/
 #rm -rf src/main/groovy/groovyx/gpars/extra166y/
