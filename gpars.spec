@@ -12,7 +12,7 @@ BuildArch:      noarch
 Source0:        %{name}-%{version}.tar.bz2
 Source1:        http://www.apache.org/licenses/LICENSE-2.0.txt
 Source2:        generate-tarball.sh
-#Source100:      http://central.maven.org/maven2/org/codehaus/gpars/%{name}/%{version}/%{name}-%{version}.pom
+Source100:      http://central.maven.org/maven2/org/codehaus/gpars/%{name}/%{version}/%{name}-%{version}.pom
 
 Patch0:         0001-JSR-166.patch
 Patch1:         0002-Enable-XMvn-local-mode.patch
