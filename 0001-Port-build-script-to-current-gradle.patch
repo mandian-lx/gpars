@@ -1,0 +1,25 @@
+From b9f04148267adc6e60539411e141ff93859bae96 Mon Sep 17 00:00:00 2001
+From: Michael Simacek <msimacek@redhat.com>
+Date: Mon, 30 Mar 2015 16:26:57 +0200
+Subject: [PATCH] Port build script to current gradle
+
+---
+ build.gradle | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/build.gradle b/build.gradle
+index 71fa27c..5e0dba8 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -322,7 +322,7 @@ task zipJavaDemo(type: Zip) {
+ 
+ task zipDist(type: Zip) {
+     from jar.outputs.files
+-    from(runtimeClasspath) {
++    from(sourceSets.main.runtimeClasspath) {
+         include('jsr166*', 'netty*', 'multiverse*')
+     }
+     from('licenses') {
+-- 
+2.1.0
+
