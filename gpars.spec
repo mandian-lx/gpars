@@ -9,7 +9,7 @@ URL:            http://gpars.codehaus.org
 BuildArch:      noarch
 
 # ./generate-tarball.sh %{version}
-Source0:        %{name}-%{version}.tar.bz2
+Source0:        %{name}-%{version}.full.tar.bz2
 Source1:        http://www.apache.org/licenses/LICENSE-2.0.txt
 Source2:        generate-tarball.sh
 Source100:      http://central.maven.org/maven2/org/codehaus/gpars/%{name}/%{version}/%{name}-%{version}.pom
