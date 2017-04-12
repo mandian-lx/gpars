@@ -61,7 +61,7 @@ cp %{SOURCE100} pom.xml
 %pom_change_dep :netty:3.2.9.Final :netty:3.10.6.Final
 %pom_remove_dep :groovy-all
 %mvn_artifact pom.xml build/libs/%{name}-%{version}.jar
-gradle build -x test -Dfile.encoding=UTF-8
+gradle build -x test -x buildGuide -Dfile.encoding=UTF-8
 
 %install
 %mvn_install
