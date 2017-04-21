@@ -20,6 +20,7 @@ Patch2:         0001-Port-build-script-to-current-gradle.patch
 Patch3:         gpars-1.2.1-port-to-netty-3.10.6.patch
 Patch100:       gpars-1.2.1-gradle-use-maven-plugin.patch
 Patch101:       gpars-1.2.1-gradle-use-local-repository.patch
+Patch102:       gpars-1.2.1-use-extra166y.patch
 BuildRequires:  gradle #gradle-local >= 2.1-0.10
 BuildRequires:  maven-local
 BuildRequires:  apache-parent
@@ -52,6 +53,7 @@ cp %{SOURCE1} .
 #patch3 -p1
 #patch100 -p1
 #patch101 -p1
+%patch102 -p1
 
 %build
 #%gradle_build -f
