@@ -2,17 +2,17 @@
 
 Name:           gpars
 Version:        1.2.1
-Release:        0 #8%{?dist}
+Release:        8%{?dist}
 Summary:        Groovy Parallel Systems
 License:        ASL 2.0 and Public Domain
 URL:            http://gpars.codehaus.org
 BuildArch:      noarch
 
 # ./generate-tarball.sh %{version}
-Source0:        %{name}-%{version}.full.tar.bz2
+Source0:        %{name}-%{version}.tar.bz2
 Source1:        http://www.apache.org/licenses/LICENSE-2.0.txt
 Source2:        generate-tarball.sh
-Source100:      http://central.maven.org/maven2/org/codehaus/gpars/%{name}/%{version}/%{name}-%{version}.pom
+#Source100:      http://central.maven.org/maven2/org/codehaus/gpars/%{name}/%{version}/%{name}-%{version}.pom
 
 Patch0:         0001-JSR-166.patch
 Patch1:         0002-Enable-XMvn-local-mode.patch
@@ -20,13 +20,13 @@ Patch2:         0001-Port-build-script-to-current-gradle.patch
 Patch3:         gpars-1.2.1-port-to-netty-3.10.6.patch
 Patch100:       gpars-1.2.1-gradle-use-maven-plugin.patch
 Patch101:       gpars-1.2.1-gradle-use-local-repository.patch
-BuildRequires:  gradle #gradle-local >= 2.1-0.10
+BuildRequires:  gradle-local >= 2.1-0.10
 BuildRequires:  maven-local
 BuildRequires:  apache-parent
 BuildRequires:  extra166y
 BuildRequires:  jcsp
 BuildRequires:  netty3
-BuildRequires:  groovy #groovy-lib
+BuildRequires:  groovy-lib
 BuildRequires:  multiverse
 
 %description
@@ -44,26 +44,21 @@ Agents and Parallel Collections.
 %prep
 %setup -q
 cp %{SOURCE1} .
-#rm -rf lib/ gradle/wrapper/
-#rm -rf src/main/groovy/groovyx/gpars/extra166y/
-#patch0 -p1
-#patch1 -p1
-#patch2 -p1
-#patch3 -p1
-#patch100 -p1
-#patch101 -p1
+rm -rf lib/ gradle/wrapper/
+rm -rf src/main/groovy/groovyx/gpars/extra166y/
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch100 -p1
+%patch101 -p1
 
 %build
-#%gradle_build -f
-#gradle build -x test -Dfile.encoding=UTF-8 --offline
-cp %{SOURCE100} pom.xml
-%pom_change_dep :jsr166y :extra166y
-%pom_change_dep :netty:3.2.9.Final :netty:3.10.6.Final
-%pom_remove_dep :groovy-all
-%mvn_artifact pom.xml build/libs/%{name}-%{version}.jar
-gradle build -x test -x buildGuide -Dfile.encoding=UTF-8
+#% gradle_build -f
+gradle build -x test -x buildGuide -Dfile.encoding=UTF-8 --offline -s
 
 %install
+%mvn_artifact buils/poms/pom-default.xml build/libs/%{name}-%{version}.jar
 %mvn_install
 
 %files -f .mfiles
