@@ -46,7 +46,7 @@ Agents and Parallel Collections.
 %setup -q
 cp %{SOURCE1} .
 #rm -rf lib/ gradle/wrapper/
-#rm -rf src/main/groovy/groovyx/gpars/extra166y/
+rm -rf src/main/groovy/groovyx/gpars/extra166y/
 %patch0 -p1
 #patch1 -p1
 #patch2 -p1
