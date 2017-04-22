@@ -55,7 +55,7 @@ rm -rf src/main/groovy/groovyx/gpars/extra166y/
 
 %build
 #% gradle_build -f
-gradle build -x test -x buildGuide -Dfile.encoding=UTF-8 --offline -s
+gradle build install -x test -x buildGuide -Dfile.encoding=UTF-8 --offline -s
 
 %install
 %mvn_artifact buils/poms/pom-default.xml build/libs/%{name}-%{version}.jar
